@@ -1,0 +1,14 @@
+<div class="container text-center">
+        <!-- Three columns of text below the carousel -->
+      <div class="row">
+      {% for cat in cats %}      
+        {% if cat %} 
+         <div class="col">
+            <svg class="bd-placeholder-img rounded-circle"  width="100" height="100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+            <p></p>
+            <p><a class="btn btn-primary" href="{{ url_for('.categories', category_id=cat.id)}}" role="button">{{ cat.name }} &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+        {% endif %}
+      {% endfor %}
+    </div><!-- /.row -->
+</div><!-- /.container -->    

@@ -1,0 +1,52 @@
+<!--<div class="post-list">
+    {% for post in posts.items %}
+    <div class="row post-item pt-3">
+        <div class="col-md-9">
+            <h5><a href="{{ url_for('blog_app.article', slug=post.slug) }}">{{ post.title }}</a></h5>
+            <div class="post-body">{{ post.body[:220] }}</div>
+            <div class="text-muted">Posted by {{ post.author.full_name }} on {{
+                post.publish_date.strftime('%Y-%m-%d') }}
+                {% if post.category %}
+                in <a href="{{ url_for('.categories', category_id=post.category.id )}}">
+                    {{ post.category.name }}
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-3">
+                {% if post.image %}
+                <img src="{{ url_for('static', filename='images/uploads/' + post.image + '.sm.png') }}" class="img-thumbnail" />
+                {% endif %}
+        </div>
+    </div>
+    <hr /> 
+    {% endfor %} 
+-->
+
+    <div class="my-3 p-3 bg-white rounded shadow-sm">
+        <h6 class="border-bottom border-gray pb-2 mb-0">หมวดหมู่ : {{ category }}</h6>
+        {% for post in posts.items %}
+        <div class="media text-muted pt-3">
+          <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+          <div class="media-body pb-3 mb-0   lh-125 border-bottom border-gray">
+            <div class="d-flex justify-content-between align-items-center w-100">
+              <strong class="text-gray-dark">{{ post.title }}</strong>
+              <a href="{{ url_for('blog_app.article', slug=post.slug) }}">รายละเอียด</a>
+            </div>
+            <span class="d-block"> {{ post.goverment.name }}  <!-- {{ post.author.full_name }}  -->
+                {% if post.category %}
+                :   <a href="{{ url_for('.categories', category_id=post.category.id )}}">
+                    {{ post.category.name }}
+                    </a>
+                {% endif %}
+            </span>
+          </div>
+        </div>
+
+        {% endfor %}
+        <small class="d-block text-right  mt-3">
+          <a href="{{ url_for('blog_app.categories')}}">ทั้งหมด</a>
+        </small>
+      </div>
+
+</div>
