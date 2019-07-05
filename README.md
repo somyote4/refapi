@@ -1,4 +1,4 @@
-# Flogger: A Simple Flask Blog
+# Flogger: A Simple test
 
 Part of the ["Professional Web Development Using Python Flask" course](https://flaskcourse.com).
 
