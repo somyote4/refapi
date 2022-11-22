@@ -31,7 +31,7 @@ marshmallow==2.19.2
 marshmallow-sqlalchemy==0.16.4
 mccabe==0.6.1
 mistune==0.8.4
-Pillow==5.4.1
+Pillow==9.3.0
 psycopg2==2.8.3
 pycparser==2.19
 pylint==2.3.1
